@@ -14,20 +14,30 @@ clone project and run this step
 
 
 
-Get all Task List  : GET Request → '_/'  or '/tasks'_
+Get all Task List  : 
+                   
+                  GET Request → '_/'  or '/tasks'_
 
-Get one by Id : GET Request → '/task/{id}'  ex. '/task/1'
+Get one by Id : 
+    
+                  GET Request → '/task/{id}'  ex. '/task/1'
 
-Create new Task : POST Request → '/task'
+Create new Task : 
+                  
+                  POST Request → '/task'
                   Header → Content-Type : application/json
                   Body → {“description” : “task test”, “pending” : “false” }
                   
-Update Task : PATCH Request → '/task/'
-              Header → Content-Type : application/json
-              Body → { id : 1 , “description” : “update task test”, “pending” : “false” }
+Update Task : 
+    
+                  PATCH Request → '/task/'
+                  Header → Content-Type : application/json
+                  Body → { id : 1 , “description” : “update task test”, “pending” : “false” }
                   
 
-Delete Task : DELETE Request → '/task/id'
+Delete Task : 
+                  
+                  DELETE Request → '/task/id'
               
 
 
