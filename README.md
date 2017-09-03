@@ -4,10 +4,16 @@
 
 # SpringBootTaskList
 clone project and run this step
-1. mvn clean
-2. mvn test
-3. mvn clean install 
-4. mvn spring-boot:run 
+1. ./mvnw clean   or ( windrow : mvnw.cmd clean)
+2. ./mvnw test   or ( windrow : mvnw.cmd test)
+3. ./mvnw clean package  or ( windrow : mvnw.cmd clean install)
+4. ./mvnw spring-boot:run or ( windrow : mvnw.cmd spring-boot:run)
+    
+        
+        if you run some app on port 8080
+        your can change port   ./mvnw spring-boot:run -Dserver.port=9999
+    
+    
 5. go to url : localhost:8080
 
 **API End point**
