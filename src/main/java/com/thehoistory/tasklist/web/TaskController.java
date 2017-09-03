@@ -35,6 +35,14 @@ public class TaskController {
 		return new ResponseEntity<Task>(taskService.getTaskById(id), HttpStatus.OK);
 	}
 
+	@PostMapping(value = "/task")
+	public ResponseEntity<Task> saveTask(@RequestBody Task payload) throws TaskException {
+		if (!TaskService.canCreateTask(payload)){
+			throw new TaskException("can not create new task");
+		}
+		return new ResponseEntity<Task>(taskService.saveTask(payload), HttpStatus.OK);
+	}
+
     @DeleteMapping(value = "/task/{id}")
 	public ResponseEntity<Response> removeTaskById(@PathVariable("id") long id) throws TaskException {
     	Task task = taskService.getTaskById(id);
@@ -45,13 +53,7 @@ public class TaskController {
 		return new ResponseEntity<Response>(new Response(HttpStatus.OK.value(), "Task has been deleted"), HttpStatus.OK);
 	}
     
-    @PostMapping(value = "/task")
-   	public ResponseEntity<Task> saveTask(@RequestBody Task payload) throws TaskException {
-    	if (!TaskService.canCreateTask(payload)){
-            throw new TaskException("can not create new task");
-    	}
-		return new ResponseEntity<Task>(taskService.saveTask(payload), HttpStatus.OK);
-   	}
+
     
     @PatchMapping(value = "/task")
    	public ResponseEntity<Task>  updateTask(@RequestBody Task payload) throws TaskException {
