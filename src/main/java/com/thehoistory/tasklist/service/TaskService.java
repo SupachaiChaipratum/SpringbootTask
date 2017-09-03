@@ -25,6 +25,12 @@ public class TaskService {
 		return taskRepository.save(task);
 	}
 
+	public Task updatePanding(Task task) {
+		task.setPending(!task.isPending());
+
+		return taskRepository.save(task);
+	}
+
 	public void removeTask(Task task) {
 		taskRepository.delete(task);
 	}

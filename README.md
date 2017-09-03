@@ -16,7 +16,7 @@ clone project and run this step
 
 Get all Task List  : 
                    
-                  GET Request → '_/'  or '/tasks'_
+                  GET Request → '/'  or '/tasks'
 
 Get one by Id : 
     
@@ -34,10 +34,15 @@ Update Task :
                   Header → Content-Type : application/json
                   Body → { id : 1 , “description” : “update task test”, “pending” : “false” }
                   
+                  
+Update Panding : 
+    
+                  PUT Request → '/task/{id}'
+                  
 
 Delete Task : 
                   
-                  DELETE Request → '/task/id'
+                  DELETE Request → '/task/{id}'
               
 
 

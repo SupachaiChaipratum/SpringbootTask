@@ -167,6 +167,20 @@ public class TaskControllerTest {
 		.andExpect(jsonPath("$.pending").value(false));
 		//.andDo(print());
 	}
+
+	@Test
+	public void verifyUpdatePanding() throws Exception {
+
+
+		mockMvc.perform(MockMvcRequestBuilders.put("/task/3").accept(MediaType.APPLICATION_JSON))
+				.andExpect(jsonPath("$.id").exists())
+				.andExpect(jsonPath("$.description").exists())
+				.andExpect(jsonPath("$.pending").exists())
+				.andExpect(jsonPath("$.id").value(3))
+				.andExpect(jsonPath("$.description").value("Learn paly"))
+				.andExpect(jsonPath("$.pending").value(true));
+
+	}
 	
 	@Test
 	public void verifyInvalidTaskUpdate() throws Exception {

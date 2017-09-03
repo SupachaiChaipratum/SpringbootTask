@@ -63,6 +63,16 @@ public class TaskServiceTest {
 		assertEquals("Task test 8", result.getDescription());
 		assertEquals(true, result.isPending());
 	}
+
+	@Test
+	public void updatePanding(){
+		Task task = new Task(8,"Task test 8",true);
+		when(taskRepository.save(task)).thenReturn(task);
+		Task result = taskService.updatePanding(task);
+		assertEquals(8, result.getId());
+		assertEquals("Task test 8", result.getDescription());
+		assertEquals(false, result.isPending());
+	}
 	
 	@Test
 	public void removeTask(){
@@ -73,17 +83,17 @@ public class TaskServiceTest {
 
 
 	@Test
-	public void validatePayLoad() {
+	public void validateTask() {
 		Task task = new Task(1, "Task 1", true);
 		assertEquals(false, TaskService.canCreateTask(task));
 	}
 
 	@Test
-	public void validateInvalidPayLoad() {
+	public void validateInvalidTask() {
 		Task task = new Task(0, "Task 1", true);
 		assertEquals(true, TaskService.canCreateTask(task));
 	}
-	
+
 	
 
 }
