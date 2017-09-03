@@ -35,7 +35,7 @@ Update Task :
                   Body → { id : 1 , “description” : “update task test”, “pending” : “false” }
                   
                   
-Update Panding : 
+Update Pending : 
     
                   PUT Request → '/task/{id}'
                   

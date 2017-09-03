@@ -66,7 +66,7 @@ public class TaskController {
    	}
 
 	@PutMapping(value = "/task/{id}")
-	public ResponseEntity<Task>  updateTaskPanding(@PathVariable("id") long id) throws TaskException {
+	public ResponseEntity<Task>  updateTaskPending(@PathVariable("id") long id) throws TaskException {
 		Task task = taskService.getTaskById(id);
 		if (task == null || task.getId() <= 0){
 			throw new TaskException("Task update doesn´t exist");

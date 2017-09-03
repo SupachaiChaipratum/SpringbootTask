@@ -65,7 +65,7 @@ public class TaskServiceTest {
 	}
 
 	@Test
-	public void updatePanding(){
+	public void updatePending(){
 		Task task = new Task(8,"Task test 8",true);
 		when(taskRepository.save(task)).thenReturn(task);
 		Task result = taskService.updatePanding(task);

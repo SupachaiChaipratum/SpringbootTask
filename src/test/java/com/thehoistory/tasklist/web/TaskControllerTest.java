@@ -169,7 +169,7 @@ public class TaskControllerTest {
 	}
 
 	@Test
-	public void verifyUpdatePanding() throws Exception {
+	public void verifyUpdatePending() throws Exception {
 
 
 		mockMvc.perform(MockMvcRequestBuilders.put("/task/3").accept(MediaType.APPLICATION_JSON))
