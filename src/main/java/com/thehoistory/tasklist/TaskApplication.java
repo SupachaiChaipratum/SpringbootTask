@@ -9,6 +9,7 @@ import org.springframework.web.servlet.config.annotation.CorsRegistry;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 
+//55555
 @SpringBootApplication
 public class TaskApplication {
 	public static void main(String[] args) {
